@@ -33,13 +33,11 @@ class TasksController < ApplicationController
 
   private
 
-  def task_params
-    # *Strong params*: You need to *whitelist* what can be updated by the user
-    # Never trust user data!
-    params.require(:task).permit(:title, :details, :completed)
-  end
-
   def set_task
     @task = Task.find(params[:id])
+  end
+
+  def task_params
+    params.require(:task).permit(:title, :details, :completed)
   end
 end
