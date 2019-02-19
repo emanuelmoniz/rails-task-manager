@@ -1,0 +1,7 @@
+<h1>Tasks</h1>
+
+<h2><%= @task.title %></h2>
+<h4><%= @task.details %></h4>
+<p><%= "The task is done" if @task.completed %></p>
+<p><%= link_to "Edit", task_edit_path(@task.id) %></p>
+<p><%= link_to "Delete", task_delete_path(@task.id) %></p>

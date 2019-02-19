@@ -1,0 +1,14 @@
+<h1>Tasks</h1>
+
+<div id="tasks">
+  <% @tasks.each do |task| %>
+  <div class="task">
+    <div class="task-state">
+      <i class="<%= 'fas fa-check' if task.completed %>"></i>
+    </div>
+    <div class="task-name">
+      <%= link_to task.title, task_path(task) %>
+    </div>
+  </div>
+  <% end %>
+</div>
